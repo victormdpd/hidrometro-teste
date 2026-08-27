@@ -1,0 +1,2 @@
+data,hora,valor_atual_m3,consumo_ciclo_m3,percentual_minimo,dias_decorridos,dias_restantes,dias_total,media_diaria_m3,projecao_m3,percentual_projecao,custo_atual_reais,custo_projecao_reais,consumo_minimo_m3,leitura_inicial_m3,data_leitura_inicial,data_proxima_leitura,ultrapassou_minimo,status
+27/08/2026,16:22,15946.92,8964.39,415.0,106,0,31,84.29,2612.99,121.0,254009.39,46807.67,2160.0,6982.53,2026-05-13,2026-06-13,True,leitura_ok
