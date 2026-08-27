@@ -1,0 +1,41 @@
+name: Leitura Diária Hidrômetro
+
+on:
+  schedule:
+    - cron: '0 11 * * *'
+    - cron: '0 15 * * *'
+    - cron: '0 19 * * *'
+    - cron: '0 23 * * *'
+    - cron: '0 4 * * *'
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  leitura:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar dependências
+        run: pip install requests --break-system-packages
+      - name: Executar leitura do hidrômetro
+        env:
+          TZ: America/Sao_Paulo
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+        run: python scripts/leitura.py
+      - name: Commitar dados atualizados
+        env:
+          TZ: America/Sao_Paulo
+        run: |
+          git config --global user.name "hidrometro-bot"
+          git config --global user.email "bot@hidrometro"
+          git add dados/historico.csv dados/log.txt
+          if [ -f dados/alertas_enviados.json ]; then git add dados/alertas_enviados.json; fi
+          git diff --staged --quiet || git commit -m "Leitura automática - $(date +'%d/%m/%Y %H:%M')"
+          git push
