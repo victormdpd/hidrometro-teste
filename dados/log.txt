@@ -8091,3 +8091,18 @@
 [22/11/2026 09:18:23] Erro no envio de alerta: invalid syntax (email_alerta.py, line 1)
 [22/11/2026 09:18:23] Leitura concluida
 [22/11/2026 09:18:23] ==================================================
+[22/11/2026 12:55:00] ==================================================
+[22/11/2026 12:55:00] Iniciando leitura automatica do hidrometro
+[22/11/2026 12:55:00] Ciclo: 2026-11-09 -> 2026-12-12
+[22/11/2026 12:55:00] Tentativa 1/4...
+[22/11/2026 12:55:00] Leitura capturada: 21743.27 m3
+[22/11/2026 12:55:00] Dias decorridos (fracao): 13.2049
+[22/11/2026 12:55:00] Media diaria: 70.41 m3/dia
+[22/11/2026 12:55:00] Salvo em: /home/runner/work/hidrometro-teste/hidrometro-teste/dados/historico.csv
+[22/11/2026 12:55:00] Consumo no ciclo: 929.73 m3
+[22/11/2026 12:55:00] % do minimo: 43.0%
+[22/11/2026 12:55:00] Custo atual: R$ 27959.04
+[22/11/2026 12:55:00] Custo projecao: R$ 37364.62
+[22/11/2026 12:55:00] Erro no envio de alerta: invalid syntax (email_alerta.py, line 1)
+[22/11/2026 12:55:00] Leitura concluida
+[22/11/2026 12:55:00] ==================================================
